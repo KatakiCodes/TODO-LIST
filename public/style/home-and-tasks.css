@@ -1,0 +1,438 @@
+body {
+  background-color: #f9f8f8;
+  font-family: "poppins";
+}
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+}
+header .logo {
+  width: inherit;
+  padding: 8px 128px;
+}
+header .header-image {
+  background: linear-gradient(45deg, rgb(93, 0, 255), orange);
+  height: 182px;
+  background-size: 300%;
+  background-position:left;
+  animation: animate-gradient ease-in-out 15s infinite;
+}
+main,
+header .header-card {
+  width: 50%;
+  margin: 0 auto;
+}
+header .header-card {
+  display: flex;
+  word-wrap: break-word;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  top: -80px;
+  padding: 25px 0 25px 70px;
+  border-radius: 31px;
+  background-color: white;
+  height: auto;
+  box-shadow: 0px 2px 4px 0.1px rgb(210, 209, 209);
+}
+.logo {
+  width: 100%;
+  background-color: #f9f8f8;
+}
+.header-card .header-content {
+  width: 65%;
+}
+.header-card .header-content p {
+  font-size: 1.4rem;
+  font-family: "poppins-regular";
+}
+.header-card .header-content h2 {
+  font-size: 2.4rem;
+  width: 95%;
+  margin: 25px 0px;
+}
+.header-card .header-content button {
+  font-family: "poppins-regular";
+  font-weight: 100;
+  font-size: 1.4rem;
+  padding: 0;
+  background-repeat: no-repeat;
+  background-position: right;
+  text-align: left;
+  background-color: white;
+}
+.header-content-actions button.btn-check {
+  background-image: url("../Assets/images/icons/Check.png");
+  color: var(--green-light);
+  width: 95px;
+  margin-right: 20px;
+}
+.header-content-actions button.btn-abandon {
+  background-image: url("../Assets/images/icons/abandonar.png");
+  color: var(--indigo);
+  width: 110px;
+}
+.header-content-actions{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+}
+.header-action {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 35%;
+}
+.header-action .btn {
+  border-radius: 18px;
+  background-color: var(--blue);
+  width: 90%;
+}
+.header-action .btn a {
+  font-family: "open-sans-regular";
+  font-weight: 100;
+  font-size: 1.4rem;
+}
+/* Etapa container */
+main > p {
+  font-size: 1.4rem;
+  font-weight: 400;
+  text-align: center;
+  width: 100%;
+  color: var(--gray);
+}
+.etapa-container {
+  width: 100%;
+}
+.option-container {
+  transition: 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #e7eff6;
+  padding: 0 26px; 
+  max-height: max-content;
+  min-height: 5rem;
+  border-radius: 25px;
+  margin: 11px 0px;
+  font-family: "open-sans-regular";
+}
+.option-container.subtask {
+  background-color: rgba(0, 0, 0, 0.053);
+}
+.option-container.task:hover {
+  transition: 0.2s;
+  background-color: rgb(194, 211, 225);
+  cursor: pointer;
+}
+.option-container h3 {
+  font-size: 1.4rem;
+}
+.option-container .action {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.option-container .action form button,
+.option-container .action #btn-delete {
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px;
+  background-color: transparent;
+}
+.option-container #btn-check {
+  background-image: url("../Assets/images/icons/Check.png");
+}
+.option-container #btn-delete {
+  background-image: url("../Assets/images/icons/Excluir.png");
+}
+
+/* Home */
+.home-header-card-container {
+  width: 50%;
+  margin: -118px auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+p.inner-card-title {
+  color: black;
+  display: none;
+}
+p.out-card-title {
+  color: white;
+  display: block;
+  margin-bottom: 15px;
+}
+.home-header-card {
+  text-align: center;
+  flex-grow: 1;
+  flex-basis: 120px;
+  height: 150px;
+}
+.home-header-card p {
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+.home-card-option {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0px 2px 4px 0.1px rgb(210, 209, 209);
+  border-radius: 31px;
+}
+.home-card-option h2 {
+  font-size: 3rem;
+  text-align: center;
+}
+header a.btn.new-task {
+  position: absolute;
+  clip-path: circle();
+  top: 150px;
+  right: 20px;
+  background-color: var(--green-light);
+}
+.title-init-list{
+  margin-top: 35rem;
+}
+.title-init-list-sub{
+  margin-top: 40rem;
+}
+/* Modal */
+.modal-wrapper,
+.exclude-modal-wrapper,
+.abandon-modal-wrapper {
+  visibility: hidden;
+  transition: 0.3s;
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgba(4, 34, 55, 0.62);
+}
+.modal-container,
+.exlude-modal-container,
+.abandon-modal-container {
+  background-color: white;
+  padding: 25px;
+}
+.modal-wrapper.active,
+.exclude-modal-wrapper.active,
+.abandon-modal-wrapper.active {
+  visibility: visible;
+}
+.modal-container form,
+.exclude-modal-container form,
+.abandon-modal-container form {
+  width: 320px;
+}
+.modal-container h2,
+.exclude-modal-container h2,
+.abandon-modal-container h2 {
+  font-size: 1.8rem;
+}
+.modal-container input {
+  width: 100%;
+  margin-bottom: 10px;
+}
+.modal-container .actions,
+.exclude-modal-container .actions,
+.abandon-modal-container .actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  width: 100%;
+}
+.note.modal-container button {
+  background-color: var(--blue);
+}
+.modal-container button,
+.modal-container a,
+.exclude-modal-container button,
+.exclude-modal-container a,
+.abandon-modal-container button,
+.abandon-modal-container a {
+  font-family: "open-sans-regular";
+  font-size: 1.4rem;
+  font-weight: 100;
+  padding: 16px;
+}
+.modal-container button,
+.exclude-modal-container button,
+.abandon-modal-container button {
+  flex-grow: 2;
+  background-color: var(--green-light);
+  width: 60%;
+}
+.exclude-modal-container button {
+  background-color: crimson;
+  color: white;
+}
+
+.modal-container a,
+.exclude-modal-container a,
+.abandon-modal-container a {
+  flex-grow: 1;
+  background-color: var(--green-light);
+  color: white;
+  background-color: crimson;
+}
+.exclude-modal-container a {
+  color: white;
+  background-color: var(--green-light);
+}
+
+.exclude-modal-container {
+  padding: 25px;
+  background-color: white;
+}
+.abandon-modal-container a {
+  background-color: var(--blue);
+}
+.abandon-modal-container button {
+  background-color: crimson;
+}
+.exclude-modal-container p,
+.abandon-modal-container p {
+  font-weight: 500;
+  font-size: 1.4rem;
+  margin: 15px 0px;
+}
+/* Animate elements */
+
+/* key frames */
+@keyframes animate-gradient {
+  0%{
+      background-position:left;
+  }
+  25%{
+      background-position: center;
+  }
+  50%{
+      background-position: right;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+@keyframes slideOut {
+  from {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+}
+
+/* Break points */
+@media (max-width: 870px) {
+    .logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+  .home-header-card-container,
+  header .header-card,
+  main {
+    width: 90%;
+  }
+}
+@media (max-width: 760px) {
+  .logo{
+    width: 100%;
+    flex-direction: column;
+  }
+  p.inner-card-title {
+    color: black;
+    display: block;
+  }
+  p.out-card-title {
+    color: white;
+    display: none;
+    margin-bottom: 15px;
+  }
+  .title-init-list{
+    margin-top: 20rem;
+  }
+  .title-init-list-sub{
+    margin-top: 0rem;
+  }
+  .option-container .action {
+    align-self: flex-end;
+  }
+  html {
+    font-size: 50%;
+  }
+  header {
+    position: static;
+  }
+  main,
+  .home-header-card-container {
+    width: 90%;
+  }
+
+  .modal-wrapper,
+  .modal-container,
+  .modal-container form,
+  .exclude-modal-wrapper,
+  .exclude-modal-container,
+  .exclude-modal-container form,
+  .abandon-modal-wrapper,
+  .abandon-modal-container,
+  .abandon-modal-container form {
+    width: 100%;
+  }
+}
+
+@media(max-width:460px){
+    header .header-card{
+        flex-direction: column;
+        text-align: center;
+        padding: 25px;
+        margin: 0 auto;
+    }
+    .header-card .header-content, 
+    .header-card .header-action
+    {
+        width: 100%;
+    }
+    .header-card .header-action{
+        padding: 0px;
+        margin: 10px 0px;
+        justify-content: center;
+    }
+
+}
+
+@media (max-width: 278px) {
+  header {
+    height: 100dvh;
+  }
+  main {
+    margin-top: 0px;
+  }
+}

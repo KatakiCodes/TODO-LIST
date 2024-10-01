@@ -1,0 +1,90 @@
+@font-face {
+  font-family: "poppins-bold";
+  src: url('../Assets/fonts/Poppins-Bold.ttf');
+}
+@font-face {
+  font-family: "poppins-semibold";
+  src: url('../Assets/fonts/Poppins-SemiBold.ttf');
+}
+@font-face {
+  font-family: "poppins-regular";
+  src: url('../Assets/fonts/Poppins-Regular.ttf');
+}
+@font-face {
+    font-family: "open-sans-regular";
+    src: url('../Assets/fonts/OpenSans-Regular.ttf');
+  }
+html {
+  --green-light: #72caaf;
+  --green-blue: #addccd;
+  --blue: #5c9fe2;
+  --red: #9b2036;
+  --gray: #b5b5b5;
+  --indigo: #3a1972;
+
+  font-size: 62.5%;
+  font-family: "open-sans-regular";
+  font-weight: 100;
+}
+body{
+  background-color: #f0f0f0;
+}
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+.etapa-container a{
+  color:black;
+}
+ul {
+  list-style: none;
+}
+input[type="text"],
+input[type="email"],
+input[type="password"],
+button,
+.btn {
+  padding: 18px 16px;
+  border: 1px solid var(--gray);
+  border-radius: 28px;
+  font-size: 1.6rem;
+}
+input[type="text"],
+input[type="email"],
+input[type="password"]
+{
+  transition: 0.2s;
+  outline-color: var(--blue);
+  border: none;
+  padding-left: 28px;
+  background-color: rgba(255, 255, 255, 0.746);
+}
+input[type="check"]{
+  padding: 150px;
+}
+input[type="email"]:focus,
+input[type="password"]:focus{
+  transition: 0.2s;
+  box-shadow: 0px 1px 5px 0px rgb(146, 146, 146);
+  outline: none;
+}
+
+button,
+.btn {
+  cursor: pointer;
+  border: none;
+  color: white;
+  font-weight: 700;
+  text-align: center;
+}
+.btn.outlined{
+  background-color: unset;
+}
+h1 {
+  font-size: 2.4rem;
+}
